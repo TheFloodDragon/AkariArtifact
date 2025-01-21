@@ -17,10 +17,13 @@ import java.net.HttpURLConnection
 import java.net.URL
 
 object PluginUpdate {
+
     @Awake(LifeCycle.ENABLE)
     fun onEnable() {
-        if (PluginConfig.isEnabledCheckUpdate()) getPluginUpdate()
-        getPluginNotice()
+        if (PluginConfig.isEnabledCheckUpdate()) {
+            getPluginUpdate()
+            getPluginNotice()
+        }
     }
 
     @SubscribeEvent
