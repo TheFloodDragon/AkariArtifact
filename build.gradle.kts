@@ -3,8 +3,8 @@ import io.izzel.taboolib.gradle.*
 plugins {
     `java-library`
     `maven-publish`
-    id("io.izzel.taboolib") version "2.0.20"
-    id("org.jetbrains.kotlin.jvm") version "1.9.22"
+    id("io.izzel.taboolib") version "2.0.22"
+    id("org.jetbrains.kotlin.jvm") version "2.1.0"
 }
 
 taboolib {
@@ -35,7 +35,7 @@ taboolib {
             name("SX-Attribute").optional(true)
         }
     }
-    version { taboolib = "6.2.0-beta33" }
+    version { taboolib = "6.2.2" }
     relocate("ink.ptms.um", "com.github.cpjinan.plugin.akariartifact.um")
 }
 
@@ -52,14 +52,6 @@ dependencies {
     compileOnly(kotlin("stdlib"))
     compileOnly(fileTree("libs"))
     taboo("ink.ptms:um:1.0.1")
-}
-
-kotlin {
-    sourceSets.all {
-        languageSettings {
-            languageVersion = "2.0"
-        }
-    }
 }
 
 tasks.withType<JavaCompile> {
